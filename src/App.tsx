@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import codetestjson from './codetestjson.json';
 import './App.css';
+import Child from './Child'
+
+// const StoryObject = {
+//   headline: "Miracle cure kills fifth patient",
+//   source: "The West Australian"
+// }
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Child story={codetestjson}/>
     </div>
   );
 }
