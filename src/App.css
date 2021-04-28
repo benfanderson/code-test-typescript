@@ -1,12 +1,26 @@
-.App {
-  font-family: 'Times New Roman', Times, serif;
-  width: 70vw;
+#article{
+  width: 95%; 
   margin: auto;
 }
 
 #plus {
   width: 1vw;
-  height: auto;
 }
 
+.imgBlock {
+  width: 75%;
+  margin: auto
+}
 
+.img{
+  width: 100%
+}
+
+.pullQuote{
+  border-left: 6px solid blue;
+  padding-left: 1vw;
+}
+
+.quoteText{
+  font-size: 2em;
+}
