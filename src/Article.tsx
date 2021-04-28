@@ -10,8 +10,14 @@ type ChildProps = {
     source: string,
     byline: string,
     publicationDate: string,
-    blocks: {kind: string, text?: string | undefined, intentions?: any, 
-      url?: string, attribution?: string, captionText?: string}[]
+    blocks: {kind: string, text?: string, url?: string, 
+      attribution?: string, captionText?: string, 
+      intentions?: {
+        kind?: string,
+        index?: number,
+        length?: number,
+      }[]
+    }[]
   }
 }
 
