@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import codetestjson from './codetestjson.json';
 import './App.css';
-import Child from './Child'
+import Article from './Article'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   const [story] = useState(codetestjson)
   return (
     <div className="App">
-      <Child story={story}/>
+      <Article story={story}/>
     </div>
   );
 }

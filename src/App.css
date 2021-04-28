@@ -1,5 +1,12 @@
 .App {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Times New Roman', Times, serif;
+  width: 70vw;
+  margin: auto;
+}
+
+#plus {
+  width: 1vw;
+  height: auto;
 }
 
 
