@@ -1,7 +1,7 @@
 import React, {FC, ReactElement} from 'react';
-import './App.css';
+import '../App.css';
 import dayjs from 'dayjs';
-import plus from './assets/plus.svg';
+import plus from '../assets/plus.svg';
 type headerProps = {
     headline: string,
     byline: string,

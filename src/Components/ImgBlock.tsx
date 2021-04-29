@@ -1,7 +1,7 @@
 
 import React, {FC, ReactElement} from 'react';
-import './App.css';
-import camera from './assets/camera.svg';
+import '../App.css';
+import camera from '../assets/camera.svg';
 type imgProp = {
     url: string | undefined,
     captionText: string | undefined

@@ -1,5 +1,5 @@
 import React, {FC, ReactElement} from 'react';
-import './App.css';
+import '../App.css';
 type  Block = {
     text: string | undefined,
     attribution: string | undefined
