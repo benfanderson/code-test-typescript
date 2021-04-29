@@ -3,6 +3,7 @@ import Paragraph from './Paragraph'
 import ArticleHeader from './ArticleHeader';
 import ImgBlock from './ImgBlock';
 import BlockQuote from './BlockQuote'
+import ErrorBoundary from './ErrorBoundary';
 
 type ChildProps = {
   story: {
@@ -24,24 +25,26 @@ type ChildProps = {
 const Article: FC<ChildProps> = ({story }): ReactElement => {
     const {headline, source, byline, publicationDate, blocks} = story
     return (
-    <article id='article'>
-      <ArticleHeader headline={headline} source={source} byline={byline} publicationDate={publicationDate} />
-      {
-      blocks.map(
-        (block, index) => {
-          let element;
-          if (block.kind === 'text') {
-            element = <Paragraph key={index} text={block.text} />
-          } else if (block.kind === 'image') {
-            element = <ImgBlock key={index}  url={block.url} captionText={block.captionText} />
-          } else if (block.kind === 'pull-quote') {element = 
-            <BlockQuote key={index} text={block.text} attribution={block.attribution}/>
-          }
-          return element;
+    <ErrorBoundary>
+      <article id='article'>
+        <ArticleHeader headline={headline} source={source} byline={byline} publicationDate={publicationDate} />
+        {
+          blocks.map(
+            (block, index) => {
+              let element;
+              if (block.kind === 'text') {
+                element = <Paragraph key={index} text={block.text} />
+              } else if (block.kind === 'image') {
+                element = <ImgBlock key={index}  url={block.url} captionText={block.captionText} />
+              } else if (block.kind === 'pull-quote') {element = 
+                <BlockQuote key={index} text={block.text} attribution={block.attribution}/>
+              }
+              return element;
+            }
+          )
         }
-      )
-    }
-    </article>
+      </article>
+    </ErrorBoundary>
   )
 };
 
