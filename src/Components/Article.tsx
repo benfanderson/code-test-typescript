@@ -5,7 +5,7 @@ import ImgBlock from './ImgBlock';
 import BlockQuote from './BlockQuote'
 import ErrorBoundary from './ErrorBoundary';
 
-type ChildProps = {
+type StoryProps = {
   story: {
     headline: string,
     source: string,
@@ -22,7 +22,7 @@ type ChildProps = {
   }
 }
 
-const Article: FC<ChildProps> = ({story }): ReactElement => {
+const Article: FC<StoryProps> = ({story }): ReactElement => {
     const {headline, source, byline, publicationDate, blocks} = story
     return (
     <ErrorBoundary>
