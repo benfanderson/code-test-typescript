@@ -32,12 +32,15 @@ const Article: FC<ChildProps> = ({story }): ReactElement => {
           blocks.map(
             (block, index) => {
               let element;
-              if (block.kind === 'text') {
-                element = <Paragraph key={index} text={block.text} />
-              } else if (block.kind === 'image') {
-                element = <ImgBlock key={index}  url={block.url} captionText={block.captionText} />
-              } else if (block.kind === 'pull-quote') {element = 
-                <BlockQuote key={index} text={block.text} attribution={block.attribution}/>
+              switch (block.kind) {
+                case 'text':
+                  element = <Paragraph key={index} text={block.text} />;
+                  break;
+                case 'image':
+                  element = <ImgBlock key={index}  url={block.url} captionText={block.captionText} />;
+                  break;
+                case 'pull-quote':
+                  element= <BlockQuote key={index} text={block.text} attribution={block.attribution}/>;
               }
               return element;
             }
